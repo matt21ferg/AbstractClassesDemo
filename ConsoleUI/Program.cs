@@ -15,6 +15,37 @@ namespace ConsoleUI
              */
 
             #region Vehicles
+            var BMW = new Car();
+            {
+                BMW.Make = "BMW";
+                BMW.Model = "i8";
+                BMW.Year = "1988";
+                BMW.HasTrunk = true;
+            }
+            var Harely = new Motercycle();
+            {
+                Harely.Year = "2022";
+                Harely.Make = "Harely";
+                Harely.Model = "Davidson";
+                Harely.HasSideCart = true;
+
+
+            }
+            var Bus = new Car();
+            {
+                Bus.Year = "1990";
+                Bus.Make = "VoltsWagon";
+                Bus.Model = "big hauler";
+                Bus.HasTrunk = true;
+            }
+            var GoKart = new Car();
+            {
+                GoKart.Year = "2019";
+                GoKart.Make = "Mario Cart";
+                GoKart.Model = "Mario's Whip";
+                GoKart.HasTrunk = false;
+
+            }
 
             /*
              * Create an abstract class called Vehicle
@@ -32,21 +63,35 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
+            var carlot = new List<Vehicle>();
+            carlot.Add(BMW);
+            carlot.Add(Harely);
+            carlot.Add(Bus);
+            carlot.Add(GoKart);
 
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
              * - new it up as one of each derived class
              * Set the properties with object initializer syntax
              */
-
+            foreach (var vehicle in carlot)
+            {
+                Console.WriteLine(vehicle.Year);
+                Console.WriteLine(vehicle.Make);
+                Console.WriteLine(vehicle.Model);
+            }
+            
+            BMW.DriveAbstract();
+            Harely.DriveVirtual();
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate over each of the properties
              */
 
-            // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
+            // Call each of the drive methods for one car and one motorcycle
+            
+            #endregion
             Console.ReadLine();
         }
     }
